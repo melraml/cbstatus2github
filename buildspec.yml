@@ -34,7 +34,7 @@ phases:
     finally:
       - echo almostBuilt...
       - echo doneBuilding!
-      - ls fileNotFound
+      #- ls fileNotFound
   post_build:
     on-failure: ABORT
     commands:
