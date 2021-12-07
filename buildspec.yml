@@ -19,11 +19,11 @@ phases:
       - echo almostInstalled...
       - echo doneInstalling!
   pre_build:
-    on-failure: CONTINUE 
+    on-failure: ABORT
     commands:
       - echo prebuilding...
       - echo stillPrebuilding...
-      #finally:
+    finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
       - ls fileNotFound
