@@ -23,9 +23,10 @@ phases:
     commands:
       - echo prebuilding...
       - echo stillPrebuilding...
-    finally:
+      #finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
+      - ls fileNotFound
   build:
     on-failure: ABORT
     commands:
@@ -34,7 +35,6 @@ phases:
     finally:
       - echo almostBuilt...
       - echo doneBuilding!
-      - ls fileNotFound
   post_build:
     on-failure: ABORT
     commands:
