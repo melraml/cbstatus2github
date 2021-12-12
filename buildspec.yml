@@ -14,7 +14,7 @@ phases:
       java: corretto8
     commands:
       - echo installing...
-      - echo StillInstalling...
+      - echo Still-Installing...
     finally:
       - echo almostInstalled...
       - echo doneInstalling!
@@ -26,6 +26,8 @@ phases:
     finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
+      - #exit 2
+      - #ls fileNotFound!
   build:
     on-failure: ABORT
     commands:
