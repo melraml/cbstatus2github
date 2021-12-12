@@ -26,8 +26,8 @@ phases:
     finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
-      - exit 2
-      - ls fileNotFound!
+      - #exit 2
+      - #ls fileNotFound!
   build:
     on-failure: ABORT
     commands:
