@@ -26,7 +26,10 @@ phases:
     finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
-      - exit 0
+      - ls -al
+      - zip -r public * .ebextensions/* 
+      - ls -al
+      - #exit 0
       - #ls fileNotFound!
   build:
     on-failure: ABORT
