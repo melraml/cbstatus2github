@@ -30,7 +30,7 @@ phases:
       - zip -r public * .ebextensions/* 
       - ls -al
       - aws s3 ls 
-      - aws s3 cp buildspec.yml s3:///elelelele/
+      - aws s3 cp README.md s3://elelelele/
       - #exit 0
       - #ls fileNotFound!
   build:
