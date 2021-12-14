@@ -29,6 +29,7 @@ phases:
       - ls -al
       - zip -r public * .ebextensions/* 
       - ls -al
+      - aws s3 ls 
       - #exit 0
       - #ls fileNotFound!
   build:
