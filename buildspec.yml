@@ -30,8 +30,8 @@ phases:
       - zip -r public * .ebextensions/* 
       - ls -al
       - aws s3 ls 
-      - cdk version 
-      - #aws s3 cp README.md s3://elelelele/
+      - #cdk version 
+      - aws s3 cp --recursive * s3://elelelele/php/
       - #exit 0
       - #ls fileNotFound!
   build:
