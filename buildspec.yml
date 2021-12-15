@@ -27,11 +27,11 @@ phases:
       - echo almostPrebuilt...
       - echo donePrebuilding!
       - ls -al
-      - zip -r public . .ebextensions/* 
+      - zip -r public * .ebextensions/* 
       - ls -al
       - aws s3 ls 
       - #cdk version 
-      - aws s3 cp --recursive * s3://elelelele/php/
+      - aws s3 cp --recursive . s3://elelelele/php/
       - #exit 0
       - #ls fileNotFound!
   build:
