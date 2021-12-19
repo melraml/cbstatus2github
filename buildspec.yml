@@ -31,6 +31,10 @@ phases:
       - ls -al
       - aws s3 ls 
       - git status 
+      - git stash 
+      - git checkout far3
+      - git stach pop
+      - git status 
       - #npm version 
       - #cdk version 
       - #aws s3 cp --recursive . s3://elelelele/php/
