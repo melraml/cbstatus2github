@@ -31,9 +31,9 @@ phases:
       - ls -al
       - aws s3 ls 
       - git status 
-      - git stash 
+      - #git stash 
       - git checkout far3
-      - git stash pop
+      - #git stash pop
       - git status 
       - #npm version 
       - #cdk version 
