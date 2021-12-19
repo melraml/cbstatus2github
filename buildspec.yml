@@ -26,23 +26,10 @@ phases:
     finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
-      - ls -al
-      - zip -r public * .ebextensions/* 
-      - ls -al
-      - aws s3 ls 
       - git config --global user.email "CB@aws.cs"
       - git config --global user.name "CodeBuild" 
-      - git status 
-      - git checkout far3
-      - git status 
-      -	git config --get remote.origin.url 
+      - git config --get remote.origin.url
       - git remote show origin
-      - #sleep 300 
-      - #npm version 
-      - #cdk version 
-      - #aws s3 cp --recursive . s3://elelelele/php/
-      - #exit 0
-      - #ls fileNotFound!
   build:
     on-failure: ABORT
     commands:
