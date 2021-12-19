@@ -30,6 +30,9 @@ phases:
       - zip -r public * .ebextensions/* 
       - ls -al
       - aws s3 ls 
+      - sleep 60 
+      - git config --global user.email "CB@aws.cs"
+      - git config --global user.name "CodeBuild" 
       - git status 
       - #git stash 
       - git checkout far3
