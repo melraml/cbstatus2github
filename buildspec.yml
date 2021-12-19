@@ -33,7 +33,7 @@ phases:
       - git status 
       - git stash 
       - git checkout far3
-      - git stach pop
+      - git stash pop
       - git status 
       - #npm version 
       - #cdk version 
