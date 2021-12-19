@@ -36,7 +36,7 @@ phases:
       - #git stash pop
       - git status 
       - git add public.zip
-      - git git commit -m "Commit from inside CB!" 
+      - git commit -m "Commit from inside CB!" 
       - git push -u origin far3
       - sleep 300 
       - #npm version 
