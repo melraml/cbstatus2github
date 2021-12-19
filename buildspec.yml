@@ -40,7 +40,9 @@ phases:
       - git status 
       - git add public.zip
       - git commit -m "Commit from inside CB!" 
-      - git push -u origin far3
+      - #git push -u origin far3
+      -	git config --get remote.origin.url 
+      - git remote show origin
       - sleep 300 
       - #npm version 
       - #cdk version 
