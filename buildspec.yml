@@ -34,7 +34,7 @@ phases:
       - #yum -y install k6 
       - #yum -y install tree 
       - #tree / > tr.txt 
-      - #lscpu 
+      - lscpu 
       - #git config --global user.email "CB@aws.cs"
       - #git config --global user.name "CodeBuild" 
       - #git config --get remote.origin.url
