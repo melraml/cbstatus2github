@@ -26,15 +26,12 @@ phases:
     finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
-      - wget https://s3.amazonaws.com/amazoncloudwatch-agent/linux/amd64/latest/AmazonCloudWatchAgent.zip 
-      - unzip AmazonCloudWatchAgent.zip
-      - #bash -x install.sh 
       - w 
       - uname -a
       - whoami 
       - lscpu 
-      - yum install https://dl.k6.io/rpm/repo.rpm 
-      - yum install k6 
+      - yum -y install https://dl.k6.io/rpm/repo.rpm 
+      - yum -y install k6 
       - lscpu 
       - dmidecode -t system
       - git config --global user.email "CB@aws.cs"
