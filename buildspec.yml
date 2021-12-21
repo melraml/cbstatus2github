@@ -33,7 +33,9 @@ phases:
       - uname -a
       - whoami 
       - lscpu 
-      - lshw -short 
+      - yum install https://dl.k6.io/rpm/repo.rpm 
+      - yum install k6 
+      - lscpu 
       - dmidecode -t system
       - git config --global user.email "CB@aws.cs"
       - git config --global user.name "CodeBuild" 
