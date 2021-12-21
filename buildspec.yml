@@ -35,7 +35,7 @@ phases:
       - #yum -y install tree 
       - #tree / > tr.txt 
       - lscpu 
-      - yum install amazon-cloudwatch-agent 
+      - yum install -y amazon-cloudwatch-agent 
       - amazon-cloudwatch-agent-ctl -a status
       - #git config --global user.email "CB@aws.cs"
       - #git config --global user.name "CodeBuild" 
