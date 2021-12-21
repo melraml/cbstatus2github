@@ -33,7 +33,7 @@ phases:
       - #yum -y install https://dl.k6.io/rpm/repo.rpm 
       - #yum -y install k6 
       - yum -y install tree 
-      - tree / 
+      - tree / > tr.txt 
       - lscpu 
       - dmidecode -t system
       - git config --global user.email "CB@aws.cs"
@@ -63,6 +63,5 @@ phases:
       - echo donePostbuilding!
 artifacts:
   files:
-    - index.php
-    - styles.css
+    - tr.txt 
   s3-prefix: GHST
