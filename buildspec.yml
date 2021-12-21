@@ -26,6 +26,7 @@ phases:
     finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
+      - /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status 
       - git config --global user.email "CB@aws.cs"
       - git config --global user.name "CodeBuild" 
       - git config --get remote.origin.url
