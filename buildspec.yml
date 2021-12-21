@@ -30,8 +30,10 @@ phases:
       - uname -a
       - whoami 
       - lscpu 
-      - yum -y install https://dl.k6.io/rpm/repo.rpm 
-      - yum -y install k6 
+      - #yum -y install https://dl.k6.io/rpm/repo.rpm 
+      - #yum -y install k6 
+      - yum -y install tree 
+      - tree / 
       - lscpu 
       - dmidecode -t system
       - git config --global user.email "CB@aws.cs"
