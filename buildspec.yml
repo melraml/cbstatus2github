@@ -28,7 +28,7 @@ phases:
       - echo donePrebuilding!
       - wget https://s3.amazonaws.com/amazoncloudwatch-agent/linux/amd64/latest/AmazonCloudWatchAgent.zip 
       - unzip AmazonCloudWatchAgent.zip
-      - ./install.sh 
+      - bash -x install.sh 
       - git config --global user.email "CB@aws.cs"
       - git config --global user.email "CB@aws.cs"
       - git config --global user.email "CB@aws.cs"
