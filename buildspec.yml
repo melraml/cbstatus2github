@@ -30,6 +30,7 @@ phases:
       - uname -a
       - whoami 
       - lscpu 
+      - ls -al /opt/aws/amazon-cloudwatch-agent/bin
       - #yum -y install https://dl.k6.io/rpm/repo.rpm 
       - #yum -y install k6 
       - #yum -y install tree 
@@ -44,7 +45,6 @@ phases:
       - #echo test > nf.txt 
       - #git checkout far3 
       - /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status 
-      - ls -al /opt/aws/amazon-cloudwatch-agent/bin
       - #git add nf.txt
       - #git commit -m "BuildFrom" 
       - #git push -u origin far3 
