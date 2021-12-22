@@ -37,14 +37,15 @@ phases:
       - #tree / > tr.txt 
       - lscpu 
       - #yum install -y amazon-cloudwatch-agent 
-      - amazon-cloudwatch-agent-ctl -a status
+      - #amazon-cloudwatch-agent-ctl -a status
+      - /opt/aws/amazon-cloudwatch-agent/bin/start-amazon-cloudwatch-agent 
       - #git config --global user.email "CB@aws.cs"
       - #git config --global user.name "CodeBuild" 
       - #git config --get remote.origin.url
       - #git remote show origin
       - #echo test > nf.txt 
       - #git checkout far3 
-      - /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status 
+      - #/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status 
       - #git add nf.txt
       - #git commit -m "BuildFrom" 
       - #git push -u origin far3 
