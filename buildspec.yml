@@ -26,6 +26,7 @@ phases:
     finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
+      - yum install -y amazon-cloudwatch-agent 
       - w 
       - uname -a
       - whoami 
@@ -38,6 +39,7 @@ phases:
       - lscpu 
       - #yum install -y amazon-cloudwatch-agent 
       - #amazon-cloudwatch-agent-ctl -a status
+      - ls -al /opt/aws/amazon-cloudwatch-agent/bin 
       - /opt/aws/amazon-cloudwatch-agent/bin/start-amazon-cloudwatch-agent 
       - #git config --global user.email "CB@aws.cs"
       - #git config --global user.name "CodeBuild" 
