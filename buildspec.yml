@@ -30,33 +30,10 @@ phases:
       - yum install -y k6-v0.35.0-linux-amd64.rpm 
       - yum install -y amazon-cloudwatch-agent 
       - mv statsd.json /opt/aws/amazon-cloudwatch-agent/etc/
-      - w 
-      - uname -a
-      - whoami 
-      - lscpu 
       - ls -al /opt/aws/amazon-cloudwatch-agent/bin
       - K6_STATSD_ENABLE_TAGS=true k6 run --out statsd script.js 
       - /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/common-config.toml -envconfig /opt/aws/amazon-cloudwatch-agent/etc/statsd.json -pidfile /opt/aws/amazon-cloudwatch-agent/var/amazon-cloudwatch-agent.pid & 
       - sleep 300 
-      - #yum -y install https://dl.k6.io/rpm/repo.rpm 
-      - #yum -y install k6 
-      - #yum -y install tree 
-      - #tree / > tr.txt 
-      - lscpu 
-      - #yum install -y amazon-cloudwatch-agent 
-      - #amazon-cloudwatch-agent-ctl -a status
-      - ls -al /opt/aws/amazon-cloudwatch-agent/bin 
-      - /opt/aws/amazon-cloudwatch-agent/bin/start-amazon-cloudwatch-agent 
-      - #git config --global user.email "CB@aws.cs"
-      - #git config --global user.name "CodeBuild" 
-      - #git config --get remote.origin.url
-      - #git remote show origin
-      - #echo test > nf.txt 
-      - #git checkout far3 
-      - #/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status 
-      - #git add nf.txt
-      - #git commit -m "BuildFrom" 
-      - #git push -u origin far3 
   build:
     on-failure: ABORT
     commands:
@@ -73,7 +50,3 @@ phases:
     finally:
       - echo almostPostbuilt...
       - echo donePostbuilding!
-artifacts:
-  files:
-    - tr.txt 
-  s3-prefix: GHST
