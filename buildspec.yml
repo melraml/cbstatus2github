@@ -33,7 +33,7 @@ phases:
       - ls -al /opt/aws/amazon-cloudwatch-agent/bin
       - K6_STATSD_ENABLE_TAGS=true k6 run --out statsd script.js 
       - /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/common-config.toml -envconfig /opt/aws/amazon-cloudwatch-agent/etc/statsd.json -pidfile /opt/aws/amazon-cloudwatch-agent/var/amazon-cloudwatch-agent.pid & 
-      - sleep 300 
+      - sleep 10 
   build:
     on-failure: ABORT
     commands:
