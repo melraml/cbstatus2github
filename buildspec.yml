@@ -26,12 +26,18 @@ phases:
     finally:
       - echo almostPrebuilt...
       - echo donePrebuilding!
+      - wget https://github.com/grafana/k6/releases/download/v0.35.0/k6-v0.35.0-linux-amd64.rpm 
+      - yum install -y k6-v0.35.0-linux-amd64.rpm 
       - yum install -y amazon-cloudwatch-agent 
+      - mv statsd.json /opt/aws/amazon-cloudwatch-agent/etc/
       - w 
       - uname -a
       - whoami 
       - lscpu 
       - ls -al /opt/aws/amazon-cloudwatch-agent/bin
+      - K6_STATSD_ENABLE_TAGS=true k6 run --out statsd script.js 
+      - /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/common-config.toml -envconfig /opt/aws/amazon-cloudwatch-agent/etc/statsd.json -pidfile /opt/aws/amazon-cloudwatch-agent/var/amazon-cloudwatch-agent.pid & 
+      - sleep 300 
       - #yum -y install https://dl.k6.io/rpm/repo.rpm 
       - #yum -y install k6 
       - #yum -y install tree 
