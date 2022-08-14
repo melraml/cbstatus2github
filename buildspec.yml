@@ -50,3 +50,4 @@ phases:
     finally:
       - echo almostPostbuilt...
       - echo donePostbuilding!
+      - echo Protonpower
